@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <br /> <br />
+        <div >
+          
+
+            <div class="row">
+                <label class="col-2">StudentName</label>
+                <input class="col-3"type="text" id="name" style="margin-left:250px;  width:400px;" />
+            </div>
+       
+            <br /><div class="row">
+    <label class="col-2">StudentAddress</label>
+    <input class="col-3" type="text" id="desc" style="margin-left:250px;  width:400px;" />
+
+</div>
+<br />
+
+            <div class="form-group row">
+                <label class="col-2">ChooseCourse</label>
+                <select id="ch_user1" class="col-4 offset-2">
+                    <option value="select"></option>
+                </select>
+            </div>
+            <br />
+            <button value="Search by ID" id="serbyID" class="btn btn-primary offset-1 col-3" style="width:400px; margin-left:250px;" onclick="searchbyID();">ADD Course</button>
+
+        </div>
+        <br /><br />
+        <table class="table table-bordered table-hover">
+
+
+            <tbody id="sreachbyID"></tbody>
+        </table>
+
+
+    </div>
+
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+
+    <script src="../Scripts/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+
+
+                url: "http://localhost:7777/api/courses",
+                method: "GET",
+                contentType: "application/json",
+                success: function (data) {
+                    $.each(data, function (i, course) {
+
+                        var div_data = "<option value=" + course.id + ">" + course.name + "</option>";
+                        //alert(div_data);
+                        $(div_data).appendTo('#ch_user1');
+
+                    })
+                },
+                error: function () {
+                    alert("error")
+                }
+
+
+
+
+            });
+
+            $("#ch_user1").on('change', function (e) {
+                var optionSelected = $("option:selected", this);
+                var valueSelected = this.value;
+                //alert(valueSelected);
+
+
+                idSelect = parseInt(valueSelected);
+
+                $.ajax({
+
+
+                    url: "http://localhost:7777/api/courses/" + idSelect,
+                    method: "GET",
+                    contentType: "application/json",
+                    success: function (data) {
+                      
+                        
+
+
+                    }
+                    ,
+                    error: function (e) {
+
+
+                        alert("Error");
+
+                        flag = true;
+                    }
+
+
+                })
+
+
+
+
+
+
+
+            });
+
+
+        });
+        
+
+        $(function () {
+
+            flag = false;
+        })
+        function searchbyID() {
+
+            var NewCourse = {
+
+                
+                student_name: $("#name").val(),
+                course_id: idSelect,
+               
+                address: $("#desc").val()
+
+            };
+
+
+
+
+
+            var id = $("#serch").val();
+
+            $.ajax({
+
+
+                url: "http://localhost:7777/api/students",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(NewCourse),
+                success: function (data) {
+                    
+                    //if (flag == true) {
+                    //    $(document).getElementById("sreachbyID").deleteRow(0);
+                    //}
+
+                    $("#sreachbyID").append("<tr> <td>" + data.student_name + "</td><td>" + data.course_id + "</td><td>" + data.address + "</td></tr><tr><td colspan='4'>" + "Added already" + "</td></tr>");
+
+
+                    flag = true;
+    
+                }
+                ,
+                error: function (e) {
+                    alert("eror");
+
+                    //if (flag == true) {
+                    //    $(document).getElementById("sreachbyID").deleteRow(0);
+
+                    //}
+                    $("#sreachbyID").append("<tr> <td colspan='4'>" + "NOT Found" + "</td></tr>");
+
+
+                    flag = true;
+                }
+
+
+
+            })
+
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

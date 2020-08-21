@@ -1,0 +1,9 @@
+c:\Users\Eng\source\repos\lab3\lab3client\bin\lab3client.dll.config
+c:\Users\Eng\source\repos\lab3\lab3client\bin\lab3client.dll
+c:\Users\Eng\source\repos\lab3\lab3client\bin\lab3client.pdb
+c:\Users\Eng\source\repos\lab3\lab3client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\Users\Eng\source\repos\lab3\lab3client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\Users\Eng\source\repos\lab3\lab3client\obj\Debug\lab3client.csprojResolveAssemblyReference.cache
+c:\Users\Eng\source\repos\lab3\lab3client\obj\Debug\lab3client.csproj.CoreCompileInputs.cache
+c:\Users\Eng\source\repos\lab3\lab3client\obj\Debug\lab3client.dll
+c:\Users\Eng\source\repos\lab3\lab3client\obj\Debug\lab3client.pdb

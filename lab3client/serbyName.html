@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <br /> <br />
+        <div class="row">
+
+            <input type="text" id="serch" style="margin-left:250px; width:400px;" />
+
+            <button value="Search by ID" id="serbyID" class="btn btn-primary offset-1" style="width:200px;" onclick="searchbyID();">Search by Name</button>
+
+        </div>
+        <br /><br />
+        <table class="table table-bordered table-hover">
+
+
+            <tbody id="sreachbyID"></tbody>
+        </table>
+
+
+    </div>
+
+    <script src="Scripts/jquery-3.3.1.js"></script>
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script>
+        $(function () {
+
+            flag = false;
+        })
+        function searchbyID() {
+            var name = $("#serch").val();
+            
+            $.ajax({
+
+                
+                url: "http://localhost:7777/api/course/"+name,
+                method: "GET",
+                contentType: "application/json",
+                success: function (data) {
+                    if (flag == true)
+                    {
+                        document.getElementById("sreachbyID").deleteRow(0);
+                    }
+
+                    $("#sreachbyID").append("<tr> <td>" + data.name + "</td><td>" + data.duration + "</td><td>" + data.description + "</td></tr>");
+
+
+                    flag = true;
+
+                }
+                ,
+                error: function (e) {
+
+                    
+                    if (flag == true) {
+                        document.getElementById("sreachbyID").deleteRow(0);
+
+                    }
+                    $("#sreachbyID").append("<tr> <td colspan='4'>" +"NOT Found"+ "</td></tr>");
+
+
+                    flag = true;
+                }
+
+
+
+            })
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

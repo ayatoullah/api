@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab3", "lab3\lab3.csproj", "{2A2A4FC6-2562-4655-B83A-35F7527992A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab3client", "lab3client\lab3client.csproj", "{82F9D902-EB7F-4754-8EB1-B545E9FF76F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "windowClient", "windowClient\windowClient.csproj", "{9E012B29-209F-4D01-BE3D-912A2AA1CE09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A2A4FC6-2562-4655-B83A-35F7527992A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2A4FC6-2562-4655-B83A-35F7527992A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2A4FC6-2562-4655-B83A-35F7527992A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2A4FC6-2562-4655-B83A-35F7527992A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F9D902-EB7F-4754-8EB1-B545E9FF76F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F9D902-EB7F-4754-8EB1-B545E9FF76F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F9D902-EB7F-4754-8EB1-B545E9FF76F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F9D902-EB7F-4754-8EB1-B545E9FF76F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E012B29-209F-4D01-BE3D-912A2AA1CE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E012B29-209F-4D01-BE3D-912A2AA1CE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E012B29-209F-4D01-BE3D-912A2AA1CE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E012B29-209F-4D01-BE3D-912A2AA1CE09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CBE03EB-6864-4081-BA0B-83EA53353AAD}
+	EndGlobalSection
+EndGlobal
